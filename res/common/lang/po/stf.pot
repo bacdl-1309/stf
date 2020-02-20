@@ -4,10 +4,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: app/components/stf/device/device-info-filter/index.js:119
-#: app/components/stf/device/device-info-filter/index.js:54
-#: app/components/stf/device/device-info-filter/index.js:63
-#: app/components/stf/device/device-info-filter/index.js:73
+#: app/components/stf/device/device-info-filter/index.js:117
+#: app/components/stf/device/device-info-filter/index.js:52
+#: app/components/stf/device/device-info-filter/index.js:61
+#: app/components/stf/device/device-info-filter/index.js:71
 msgid "-"
 msgstr ""
 
@@ -28,16 +28,12 @@ msgid "A secure container mount point couldn't be accessed on external media."
 msgstr ""
 
 #: app/control-panes/info/info.html:1
-#: app/device-list/column/device-column-service.js:193
+#: app/device-list/column/device-column-service.js:178
 msgid "ABI"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:60
+#: app/components/stf/device/device-info-filter/index.js:58
 msgid "AC"
-msgstr ""
-
-#: app/settings/keys/adb-keys/adb-keys.html:1
-msgid "ADB Keys"
 msgstr ""
 
 #: app/settings/keys/access-tokens/access-tokens.html:1
@@ -58,6 +54,10 @@ msgstr ""
 
 #: app/control-panes/dashboard/install/activities/activities.html:1
 msgid "Activity"
+msgstr ""
+
+#: app/settings/keys/adb-keys/adb-keys.html:1
+msgid "ADB Keys"
 msgstr ""
 
 #: app/control-panes/resources/resources.html:1
@@ -106,10 +106,6 @@ msgstr ""
 msgid "App Upload"
 msgstr ""
 
-#: app/control-panes/device-control/device-control.html:1
-msgid "App switch"
-msgstr ""
-
 #: app/control-panes/dashboard/apps/apps.html:1
 msgid "Apps"
 msgstr ""
@@ -118,15 +114,11 @@ msgstr ""
 msgid "Are you sure you want to reboot this device?"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:30
-msgid "Automating"
-msgstr ""
-
 #: app/control-panes/control-panes-controller.js:14
 msgid "Automation"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:29
+#: app/components/stf/device/device-info-filter/index.js:28
 msgid "Available"
 msgstr ""
 
@@ -139,50 +131,41 @@ msgstr ""
 msgid "Battery"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:235
+#: app/device-list/column/device-column-service.js:202
 msgid "Battery Health"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:259
+#: app/device-list/column/device-column-service.js:226
 msgid "Battery Level"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:243
+#: app/device-list/column/device-column-service.js:210
 msgid "Battery Source"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:251
+#: app/device-list/column/device-column-service.js:218
 msgid "Battery Status"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:270
+#: app/device-list/column/device-column-service.js:239
 msgid "Battery Temp"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:91
+#: app/components/stf/device/device-info-filter/index.js:89
 msgid "Bluetooth"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:165
+#: app/device-list/column/device-column-service.js:153
 msgid "Browser"
 msgstr ""
 
 #: app/components/stf/device/device-info-filter/index.js:12
-#: app/components/stf/device/device-info-filter/index.js:28
+#: app/components/stf/device/device-info-filter/index.js:27
 msgid "Busy"
 msgstr ""
 
 #: app/device-list/stats/device-list-stats.html:1
 msgid "Busy Devices"
-msgstr ""
-
-#: app/control-panes/info/info.html:1
-#: app/control-panes/performance/cpu/cpu.html:1
-msgid "CPU"
-msgstr ""
-
-#: app/device-list/column/device-column-service.js:199
-msgid "CPU Platform"
 msgstr ""
 
 #: app/control-panes/advanced/input/input.html:1
@@ -206,7 +189,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:69
+#: app/components/stf/device/device-info-filter/index.js:67
 msgid "Charging"
 msgstr ""
 
@@ -225,11 +208,11 @@ msgstr ""
 msgid "Clipboard"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:48
+#: app/components/stf/device/device-info-filter/index.js:46
 msgid "Cold"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:22
+#: app/components/stf/device/device-info-filter/index.js:21
 #: app/components/stf/device/device-info-filter/index.js:6
 #: app/control-panes/info/info.html:1
 msgid "Connected"
@@ -249,6 +232,11 @@ msgstr ""
 
 #: app/control-panes/info/info.html:1
 msgid "Cores"
+msgstr ""
+
+#: app/control-panes/info/info.html:1
+#: app/control-panes/performance/cpu/cpu.html:1
+msgid "CPU"
 msgstr ""
 
 #: app/control-panes/device-control/device-control.html:1
@@ -291,7 +279,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:50
+#: app/components/stf/device/device-info-filter/index.js:48
 msgid "Dead"
 msgstr ""
 
@@ -318,6 +306,19 @@ msgstr ""
 msgid "Device"
 msgstr ""
 
+#: app/device-list/details/device-list-details-directive.js:38
+#: app/device-list/icons/device-list-icons-directive.js:122
+msgid "Device cannot get kicked from the group"
+msgstr ""
+
+#: app/components/stf/device/device-info-filter/index.js:38
+msgid "Device is not present anymore for some reason."
+msgstr ""
+
+#: app/components/stf/device/device-info-filter/index.js:39
+msgid "Device is present but offline."
+msgstr ""
+
 #: app/control-panes/info/info.html:1
 msgid "Device Photo"
 msgstr ""
@@ -326,24 +327,11 @@ msgstr ""
 msgid "Device Settings"
 msgstr ""
 
-#: app/device-list/details/device-list-details-directive.js:38
-#: app/device-list/icons/device-list-icons-directive.js:123
-msgid "Device cannot get kicked from the group"
-msgstr ""
-
-#: app/components/stf/device/device-info-filter/index.js:40
-msgid "Device is not present anymore for some reason."
-msgstr ""
-
-#: app/components/stf/device/device-info-filter/index.js:41
-msgid "Device is present but offline."
-msgstr ""
-
 #: app/components/stf/common-ui/modals/fatal-message/fatal-message.html:1
 msgid "Device was disconnected"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:39
+#: app/components/stf/device/device-info-filter/index.js:37
 msgid "Device was kicked by automatic timeout."
 msgstr ""
 
@@ -356,12 +344,12 @@ msgstr ""
 msgid "Disable WiFi"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:70
+#: app/components/stf/device/device-info-filter/index.js:68
 msgid "Discharging"
 msgstr ""
 
 #: app/components/stf/common-ui/modals/socket-disconnected/socket-disconnected.html:1
-#: app/components/stf/device/device-info-filter/index.js:21
+#: app/components/stf/device/device-info-filter/index.js:20
 #: app/components/stf/device/device-info-filter/index.js:5
 msgid "Disconnected"
 msgstr ""
@@ -370,24 +358,20 @@ msgstr ""
 msgid "Display"
 msgstr ""
 
-#: app/control-panes/resources/resources.html:1
-msgid "Domain"
-msgstr ""
-
 #: app/control-panes/dashboard/install/install.html:7
 msgid "Drop file to upload"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:92
+#: app/components/stf/device/device-info-filter/index.js:90
 msgid "Dummy"
-msgstr ""
-
-#: app/control-panes/automation/device-settings/device-settings.html:1
-msgid "Enable WiFi"
 msgstr ""
 
 #: app/settings/notifications/notifications.html:1
 msgid "Enable notifications"
+msgstr ""
+
+#: app/control-panes/automation/device-settings/device-settings.html:1
+msgid "Enable WiFi"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
@@ -398,7 +382,7 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: app/components/stf/control/control-service.js:130
+#: app/components/stf/control/control-service.js:129
 msgid "Error while getting data"
 msgstr ""
 
@@ -406,16 +390,12 @@ msgstr ""
 msgid "Error while reconnecting"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:93
+#: app/components/stf/device/device-info-filter/index.js:91
 msgid "Ethernet"
 msgstr ""
 
 #: app/control-panes/dashboard/shell/shell.html:1
 msgid "Executes remote shell commands"
-msgstr ""
-
-#: app/control-panes/info/info.html:1
-msgid "FPS"
 msgstr ""
 
 #: app/components/stf/upload/upload-error-filter.js:5
@@ -443,10 +423,14 @@ msgid "Fingerprint"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
+msgid "FPS"
+msgstr ""
+
+#: app/control-panes/info/info.html:1
 msgid "Frequency"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:71
+#: app/components/stf/device/device-info-filter/index.js:69
 msgid "Full"
 msgstr ""
 
@@ -484,11 +468,11 @@ msgid "Go Forward"
 msgstr ""
 
 #: app/components/stf/common-ui/modals/fatal-message/fatal-message.html:1
-#: app/control-panes/control-panes-hotkeys-controller.js:92
+#: app/control-panes/control-panes-hotkeys-controller.js:89
 msgid "Go to Device List"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:49
+#: app/components/stf/device/device-info-filter/index.js:47
 msgid "Good"
 msgstr ""
 
@@ -535,10 +519,6 @@ msgstr ""
 
 #: app/control-panes/info/info.html:1
 msgid "IMEI"
-msgstr ""
-
-#: app/control-panes/info/info.html:1
-msgid "IMSI"
 msgstr ""
 
 #: auth/ldap/scripts/signin/signin.html:1
@@ -615,7 +595,7 @@ msgstr ""
 msgid "Local Settings"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:279
+#: app/device-list/column/device-column-service.js:250
 msgid "Location"
 msgstr ""
 
@@ -644,7 +624,7 @@ msgid "Manner Mode"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
-#: app/device-list/column/device-column-service.js:177
+#: app/device-list/column/device-column-service.js:165
 msgid "Manufacturer"
 msgstr ""
 
@@ -660,23 +640,23 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:94
+#: app/components/stf/device/device-info-filter/index.js:92
 msgid "Mobile"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:95
+#: app/components/stf/device/device-info-filter/index.js:93
 msgid "Mobile DUN"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:96
+#: app/components/stf/device/device-info-filter/index.js:94
 msgid "Mobile High Priority"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:97
+#: app/components/stf/device/device-info-filter/index.js:95
 msgid "Mobile MMS"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:98
+#: app/components/stf/device/device-info-filter/index.js:96
 msgid "Mobile SUPL"
 msgstr ""
 
@@ -685,12 +665,12 @@ msgstr ""
 msgid "Model"
 msgstr ""
 
-#: app/settings/keys/adb-keys/adb-keys.html:1
-msgid "More about ADB Keys"
-msgstr ""
-
 #: app/settings/keys/access-tokens/access-tokens.html:1
 msgid "More about Access Tokens"
+msgstr ""
+
+#: app/settings/keys/adb-keys/adb-keys.html:1
+msgid "More about ADB Keys"
 msgstr ""
 
 #: app/control-panes/advanced/input/input.html:1
@@ -699,7 +679,6 @@ msgstr ""
 
 #: app/control-panes/explorer/explorer.html:1
 #: app/control-panes/info/info.html:1
-#: app/control-panes/resources/resources.html:1
 msgid "Name"
 msgstr ""
 
@@ -720,23 +699,19 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:117
+#: app/components/stf/device/device-info-filter/index.js:115
 msgid "No"
-msgstr ""
-
-#: app/settings/keys/adb-keys/adb-keys.html:1
-msgid "No ADB keys"
-msgstr ""
-
-#: app/control-panes/advanced/port-forwarding/port-forwarding.html:1
-msgid "No Ports Forwarded"
 msgstr ""
 
 #: app/settings/keys/access-tokens/access-tokens.html:1
 msgid "No access tokens"
 msgstr ""
 
-#: app/components/stf/control/control-service.js:127
+#: app/settings/keys/adb-keys/adb-keys.html:1
+msgid "No ADB keys"
+msgstr ""
+
+#: app/components/stf/control/control-service.js:126
 msgid "No clipboard data"
 msgstr ""
 
@@ -756,6 +731,10 @@ msgstr ""
 msgid "No photo available"
 msgstr ""
 
+#: app/control-panes/advanced/port-forwarding/port-forwarding.html:1
+msgid "No Ports Forwarded"
+msgstr ""
+
 #: app/control-panes/screenshots/screenshots.html:5
 msgid "No screenshots taken"
 msgstr ""
@@ -764,11 +743,11 @@ msgstr ""
 msgid "Normal Mode"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:72
+#: app/components/stf/device/device-info-filter/index.js:70
 msgid "Not Charging"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:285
+#: app/device-list/column/device-column-service.js:256
 msgid "Notes"
 msgstr ""
 
@@ -784,12 +763,7 @@ msgstr ""
 msgid "Number"
 msgstr ""
 
-#: app/control-panes/info/info.html:1
-#: app/device-list/column/device-column-service.js:55
-msgid "OS"
-msgstr ""
-
-#: app/components/stf/device/device-info-filter/index.js:23
+#: app/components/stf/device/device-info-filter/index.js:22
 #: app/components/stf/device/device-info-filter/index.js:7
 msgid "Offline"
 msgstr ""
@@ -803,24 +777,21 @@ msgstr ""
 msgid "Open"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:205
-msgid "OpenGL ES version"
-msgstr ""
-
 #: app/control-panes/info/info.html:1
 msgid "Orientation"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:51
+#: app/control-panes/info/info.html:1
+#: app/device-list/column/device-column-service.js:55
+msgid "OS"
+msgstr ""
+
+#: app/components/stf/device/device-info-filter/index.js:49
 msgid "Over Voltage"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:52
+#: app/components/stf/device/device-info-filter/index.js:50
 msgid "Overheat"
-msgstr ""
-
-#: app/control-panes/logs/logs.html:1
-msgid "PID"
 msgstr ""
 
 #: app/control-panes/dashboard/install/activities/activities.html:1
@@ -832,32 +803,28 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: app/control-panes/resources/resources.html:1
-msgid "Path"
-msgstr ""
-
 #: app/control-panes/explorer/explorer.html:1
 msgid "Permissions"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:211
+#: app/device-list/column/device-column-service.js:184
 msgid "Phone"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:229
+#: app/device-list/column/device-column-service.js:196
 msgid "Phone ICCID"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:217
+#: app/device-list/column/device-column-service.js:190
 msgid "Phone IMEI"
-msgstr ""
-
-#: app/device-list/column/device-column-service.js:223
-msgid "Phone IMSI"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
 msgid "Physical Device"
+msgstr ""
+
+#: app/control-panes/logs/logs.html:1
+msgid "PID"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
@@ -876,20 +843,12 @@ msgstr ""
 msgid "Please enter a valid email"
 msgstr ""
 
-#: auth/ldap/scripts/signin/signin.html:1
-msgid "Please enter your LDAP username"
-msgstr ""
-
-#: app/control-panes/automation/store-account/store-account.html:1
-msgid "Please enter your Store password"
-msgstr ""
-
-#: app/control-panes/automation/store-account/store-account.html:1
-msgid "Please enter your Store username"
-msgstr ""
-
 #: auth/mock/scripts/signin/signin.html:1
 msgid "Please enter your email"
+msgstr ""
+
+#: auth/ldap/scripts/signin/signin.html:1
+msgid "Please enter your LDAP username"
 msgstr ""
 
 #: auth/mock/scripts/signin/signin.html:1
@@ -898,6 +857,14 @@ msgstr ""
 
 #: auth/ldap/scripts/signin/signin.html:1
 msgid "Please enter your password"
+msgstr ""
+
+#: app/control-panes/automation/store-account/store-account.html:1
+msgid "Please enter your Store password"
+msgstr ""
+
+#: app/control-panes/automation/store-account/store-account.html:1
+msgid "Please enter your Store username"
 msgstr ""
 
 #: app/control-panes/advanced/port-forwarding/port-forwarding.html:1
@@ -921,20 +888,20 @@ msgstr ""
 msgid "Power Source"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:25
+#: app/components/stf/device/device-info-filter/index.js:24
 #: app/components/stf/device/device-info-filter/index.js:9
 msgid "Preparing"
 msgstr ""
 
-#: app/control-panes/control-panes-hotkeys-controller.js:107
+#: app/control-panes/control-panes-hotkeys-controller.js:104
 msgid "Press Back button"
 msgstr ""
 
-#: app/control-panes/control-panes-hotkeys-controller.js:106
+#: app/control-panes/control-panes-hotkeys-controller.js:103
 msgid "Press Home button"
 msgstr ""
 
-#: app/control-panes/control-panes-hotkeys-controller.js:105
+#: app/control-panes/control-panes-hotkeys-controller.js:102
 msgid "Press Menu button"
 msgstr ""
 
@@ -959,17 +926,9 @@ msgstr ""
 msgid "RAM"
 msgstr ""
 
-#: app/control-panes/info/info.html:1
-msgid "ROM"
-msgstr ""
-
 #: app/components/stf/device/device-info-filter/index.js:10
-#: app/components/stf/device/device-info-filter/index.js:26
+#: app/components/stf/device/device-info-filter/index.js:25
 msgid "Ready"
-msgstr ""
-
-#: app/components/stf/device-context-menu/device-context-menu.html:1
-msgid "Recents"
 msgstr ""
 
 #: app/components/stf/socket/socket-state/socket-state-directive.js:39
@@ -1004,12 +963,12 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: app/settings/general/local/local-settings.html:1
-msgid "Reset Settings"
-msgstr ""
-
 #: app/control-panes/dashboard/navigation/navigation.html:1
 msgid "Reset all browser settings"
+msgstr ""
+
+#: app/settings/general/local/local-settings.html:1
+msgid "Reset Settings"
 msgstr ""
 
 #: app/control-panes/advanced/maintenance/maintenance.html:1
@@ -1032,13 +991,17 @@ msgstr ""
 msgid "Roaming"
 msgstr ""
 
+#: app/control-panes/info/info.html:1
+msgid "ROM"
+msgstr ""
+
 #: app/components/stf/device-context-menu/device-context-menu.html:1
-#: app/control-panes/control-panes-hotkeys-controller.js:95
+#: app/control-panes/control-panes-hotkeys-controller.js:92
 msgid "Rotate Left"
 msgstr ""
 
 #: app/components/stf/device-context-menu/device-context-menu.html:1
-#: app/control-panes/control-panes-hotkeys-controller.js:96
+#: app/control-panes/control-panes-hotkeys-controller.js:93
 msgid "Rotate Right"
 msgstr ""
 
@@ -1062,19 +1025,6 @@ msgstr ""
 msgid "Run this command to copy the key to your clipboard"
 msgstr ""
 
-#: app/control-panes/info/info.html:1
-msgid "SD Card Mounted"
-msgstr ""
-
-#: app/control-panes/info/info.html:1
-#: app/device-list/column/device-column-service.js:183
-msgid "SDK"
-msgstr ""
-
-#: app/control-panes/info/info.html:1
-msgid "SIM"
-msgstr ""
-
 #: app/components/stf/device-context-menu/device-context-menu.html:1
 msgid "Save ScreenShot"
 msgstr ""
@@ -1083,7 +1033,7 @@ msgstr ""
 msgid "Save..."
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:147
+#: app/device-list/column/device-column-service.js:135
 msgid "Screen"
 msgstr ""
 
@@ -1095,20 +1045,25 @@ msgstr ""
 msgid "Screenshots"
 msgstr ""
 
-#: app/control-panes/advanced/input/input.html:1
-msgid "Search"
-msgstr ""
-
-#: app/control-panes/resources/resources.html:1
-msgid "Secure"
-msgstr ""
-
-#: app/control-panes/control-panes-hotkeys-controller.js:94
-msgid "Selects Next IME"
+#: app/control-panes/info/info.html:1
+msgid "SD Card Mounted"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
 #: app/device-list/column/device-column-service.js:171
+msgid "SDK"
+msgstr ""
+
+#: app/control-panes/advanced/input/input.html:1
+msgid "Search"
+msgstr ""
+
+#: app/control-panes/control-panes-hotkeys-controller.js:91
+msgid "Selects Next IME"
+msgstr ""
+
+#: app/control-panes/info/info.html:1
+#: app/device-list/column/device-column-service.js:159
 msgid "Serial"
 msgstr ""
 
@@ -1154,6 +1109,10 @@ msgstr ""
 msgid "Silent Mode"
 msgstr ""
 
+#: app/control-panes/info/info.html:1
+msgid "SIM"
+msgstr ""
+
 #: app/control-panes/explorer/explorer.html:1
 #: app/control-panes/info/info.html:1
 msgid "Size"
@@ -1163,7 +1122,7 @@ msgstr ""
 msgid "Socket connection was lost"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:38
+#: app/components/stf/device/device-info-filter/index.js:36
 msgid "Someone stole your device."
 msgstr ""
 
@@ -1185,10 +1144,6 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:14
-msgid "Stop Automation"
-msgstr ""
-
 #: app/components/stf/device-context-menu/device-context-menu.html:1
 #: app/components/stf/device/device-info-filter/index.js:11
 #: app/control-panes/device-control/device-control.html:1
@@ -1205,10 +1160,6 @@ msgstr ""
 
 #: app/control-panes/advanced/input/input.html:1
 msgid "Switch Charset"
-msgstr ""
-
-#: app/control-panes/logs/logs.html:1
-msgid "TID"
 msgstr ""
 
 #: app/control-panes/logs/logs.html:1
@@ -1229,10 +1180,6 @@ msgstr ""
 
 #: app/control-panes/logs/logs.html:1
 msgid "Text"
-msgstr ""
-
-#: app/components/stf/install/install-error-filter.js:22
-msgid "The URI passed in is invalid."
 msgstr ""
 
 #: app/components/stf/screen/screen.html:1
@@ -1327,16 +1274,16 @@ msgstr ""
 msgid "The parser did not find any certificates in the .apk."
 msgstr ""
 
-#: app/components/stf/install/install-error-filter.js:76
-msgid "The parser encountered a CertificateEncodingException in one of the files in the .apk."
-msgstr ""
-
 #: app/components/stf/install/install-error-filter.js:78
 msgid "The parser encountered a bad or missing package name in the manifest."
 msgstr ""
 
 #: app/components/stf/install/install-error-filter.js:80
 msgid "The parser encountered a bad shared user id name in the manifest."
+msgstr ""
+
+#: app/components/stf/install/install-error-filter.js:76
+msgid "The parser encountered a CertificateEncodingException in one of the files in the .apk."
 msgstr ""
 
 #: app/components/stf/install/install-error-filter.js:70
@@ -1375,6 +1322,14 @@ msgstr ""
 msgid "The system failed to install the package because the user is restricted from installing apps."
 msgstr ""
 
+#: app/components/stf/install/install-error-filter.js:22
+msgid "The URI passed in is invalid."
+msgstr ""
+
+#: app/control-panes/logs/logs.html:1
+msgid "TID"
+msgstr ""
+
 #: app/control-panes/logs/logs.html:1
 msgid "Time"
 msgstr ""
@@ -1387,12 +1342,17 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: app/control-panes/control-panes-hotkeys-controller.js:110
+#: app/control-panes/control-panes-hotkeys-controller.js:107
 msgid "Toggle Web/Native"
 msgstr ""
 
 #: app/device-list/stats/device-list-stats.html:1
 msgid "Total Devices"
+msgstr ""
+
+#: app/components/stf/common-ui/modals/fatal-message/fatal-message.html:1
+#: app/control-panes/resources/resources.html:1
+msgid "translate"
 msgstr ""
 
 #: app/components/stf/common-ui/modals/fatal-message/fatal-message.html:1
@@ -1404,11 +1364,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:61
-msgid "USB"
-msgstr ""
-
-#: app/components/stf/device/device-info-filter/index.js:24
+#: app/components/stf/device/device-info-filter/index.js:23
 #: app/components/stf/device/device-info-filter/index.js:8
 msgid "Unauthorized"
 msgstr ""
@@ -1417,12 +1373,12 @@ msgstr ""
 msgid "Uninstall"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:15
-#: app/components/stf/device/device-info-filter/index.js:31
+#: app/components/stf/device/device-info-filter/index.js:14
+#: app/components/stf/device/device-info-filter/index.js:29
 msgid "Unknown"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:42
+#: app/components/stf/device/device-info-filter/index.js:40
 msgid "Unknown reason."
 msgstr ""
 
@@ -1430,16 +1386,16 @@ msgstr ""
 msgid "Unlock Rotation"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:53
+#: app/components/stf/device/device-info-filter/index.js:51
 msgid "Unspecified Failure"
-msgstr ""
-
-#: app/control-panes/dashboard/install/install.html:5
-msgid "Upload From Link"
 msgstr ""
 
 #: app/components/stf/upload/upload-error-filter.js:7
 msgid "Upload failed"
+msgstr ""
+
+#: app/control-panes/dashboard/install/install.html:5
+msgid "Upload From Link"
 msgstr ""
 
 #: app/components/stf/upload/upload-error-filter.js:8
@@ -1458,6 +1414,10 @@ msgstr ""
 msgid "Usable Devices"
 msgstr ""
 
+#: app/components/stf/device/device-info-filter/index.js:59
+msgid "USB"
+msgstr ""
+
 #: app/control-panes/advanced/usb/usb.html:1
 msgid "Usb speed"
 msgstr ""
@@ -1466,7 +1426,7 @@ msgstr ""
 msgid "Use"
 msgstr ""
 
-#: app/device-list/column/device-column-service.js:291
+#: app/device-list/column/device-column-service.js:262
 msgid "User"
 msgstr ""
 
@@ -1474,20 +1434,12 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:27
+#: app/components/stf/device/device-info-filter/index.js:26
 msgid "Using"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
 msgid "Using Fallback"
-msgstr ""
-
-#: app/control-panes/advanced/vnc/vnc.html:1
-msgid "VNC"
-msgstr ""
-
-#: app/control-panes/resources/resources.html:1
-msgid "Value"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
@@ -1500,6 +1452,10 @@ msgstr ""
 
 #: app/control-panes/automation/device-settings/device-settings.html:1
 msgid "Vibrate Mode"
+msgstr ""
+
+#: app/control-panes/advanced/vnc/vnc.html:1
+msgid "VNC"
 msgstr ""
 
 #: app/control-panes/info/info.html:1
@@ -1526,22 +1482,22 @@ msgstr ""
 msgid "Web"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:107
-#: app/components/stf/device/device-info-filter/index.js:99
+#: app/control-panes/info/info.html:1
+msgid "Width"
+msgstr ""
+
+#: app/components/stf/device/device-info-filter/index.js:105
+#: app/components/stf/device/device-info-filter/index.js:97
 #: app/control-panes/automation/device-settings/device-settings.html:1
 #: app/control-panes/dashboard/apps/apps.html:1
 msgid "WiFi"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:100
+#: app/components/stf/device/device-info-filter/index.js:98
 msgid "WiMAX"
 msgstr ""
 
-#: app/control-panes/info/info.html:1
-msgid "Width"
-msgstr ""
-
-#: app/components/stf/device/device-info-filter/index.js:62
+#: app/components/stf/device/device-info-filter/index.js:60
 msgid "Wireless"
 msgstr ""
 
@@ -1553,15 +1509,10 @@ msgstr ""
 msgid "Y DPI"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:115
+#: app/components/stf/device/device-info-filter/index.js:113
 msgid "Yes"
 msgstr ""
 
-#: app/components/stf/device/device-info-filter/index.js:37
+#: app/components/stf/device/device-info-filter/index.js:35
 msgid "You (or someone else) kicked the device."
-msgstr ""
-
-#: app/components/stf/common-ui/modals/fatal-message/fatal-message.html:1
-#: app/control-panes/resources/resources.html:1
-msgid "translate"
 msgstr ""

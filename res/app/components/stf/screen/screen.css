@@ -23,3 +23,8 @@
   margin-bottom: 20px;
   color: #ccc;
 }
+
+p.axis-show{
+  color: #FFD700;
+  /*font-size: 16px;*/
+}

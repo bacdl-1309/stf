@@ -1,8 +1,5 @@
-/**
-* Copyright © 2019 contains code contributed by Orange SA, authors: Denis Barbaron - Licensed under the Apache license 2.0
-**/
-
-module.exports = function EnhanceDeviceServiceFactory($filter, AppState) {
+module.exports = function EnhanceDeviceServiceFactory($filter, $log, $http, AppState, ControlService) {
+  var devices_img = Object.create(null)
   var service = {}
 
   function setState(data) {
@@ -45,12 +42,42 @@ module.exports = function EnhanceDeviceServiceFactory($filter, AppState) {
   }
 
   function enhanceDevice(device) {
-    device.enhancedName = device.name || device.model || device.serial || 'Unknown'
+    var id = device.serial
+    var needScreenshot = false
+    var img = devices_img[id] || null
+    // $log.log('In enhanceDevice: ' + angular.toJson(device))
+    // $log.log('devices_img: ' + angular.toJson(devices_img))
+    device.enhancedName = device.marketName || device.model || device.serial || 'Unknown'
+    // device.enhancedName = device.manufacturer || 'Unkonwn'
     device.enhancedModel = device.model || 'Unknown'
     device.enhancedImage120 = '/static/app/devices/icon/x120/' + (device.image || '_default.jpg')
     device.enhancedImage24 = '/static/app/devices/icon/x24/' + (device.image || '_default.jpg')
     device.enhancedStateAction = $filter('statusNameAction')(device.state)
     device.enhancedStatePassive = $filter('statusNamePassive')(device.state)
+    device.enhancedImg = device.enhancedImage120
+
+    // if(device.present) {
+    //   if(!img) {
+    //    needScreenshot = true
+    //   }else if(img) {
+    //     $http.get(img).then(function(response) {
+    //       // $log.log('response status: ' + response.status)
+    //       if(response.status === 404) {
+    //         needScreenshot = true
+    //       }
+    //     })
+    //   }
+    // }
+
+    /*if(needScreenshot) {
+      var contrl = ControlService.create(device, device.channel)
+      contrl.screenshot().then(function(result) {
+        devices_img[id] = result.body.href
+      })
+    }*/
+
+    device.enhancedImg = device.enhancedImage120 //devices_img[id] || device.enhancedImage120
+
   }
 
   function enhanceDeviceDetails(device) {
@@ -66,8 +93,6 @@ module.exports = function EnhanceDeviceServiceFactory($filter, AppState) {
       device.enhancedUserProfileUrl = enhanceUserProfileUrl(device.owner.email)
       device.enhancedUserName = device.owner.name || 'No name'
     }
-
-    device.enhancedGroupOwnerProfileUrl = enhanceUserProfileUrl(device.group.owner.email)
   }
 
   function enhanceUserProfileUrl(email) {

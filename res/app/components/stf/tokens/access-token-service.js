@@ -1,7 +1,3 @@
-/**
-* Copyright © 2019 contains code contributed by Orange SA, authors: Denis Barbaron - Licensed under the Apache license 2.0
-**/
-
 module.exports = function AccessTokenServiceFactory(
   $rootScope
 , $http
@@ -30,7 +26,7 @@ module.exports = function AccessTokenServiceFactory(
     $rootScope.$apply()
   })
 
-  socket.on('user.keys.accessToken.updated', function() {
+  socket.on('user.keys.accessToken.removed', function() {
     $rootScope.$broadcast('user.keys.accessTokens.updated')
     $rootScope.$apply()
   })

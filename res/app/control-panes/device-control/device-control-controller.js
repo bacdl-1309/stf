@@ -1,7 +1,7 @@
 var _ = require('lodash')
 
-module.exports = function DeviceControlCtrl($scope, DeviceService, GroupService,
-  $location, $timeout, $window, $rootScope, LogcatService) {
+module.exports = function DeviceControlCtrl($scope, $log, DeviceService, GroupService,
+  $location, $timeout, $window, $rootScope) {
 
   $scope.showScreen = true
 
@@ -9,18 +9,7 @@ module.exports = function DeviceControlCtrl($scope, DeviceService, GroupService,
 
   $scope.groupDevices = $scope.groupTracker.devices
 
-  $scope.$on('$locationChangeStart', function(event, next, current) {
-    $scope.LogcatService = LogcatService
-    $rootScope.LogcatService = LogcatService
-  })
-
   $scope.kickDevice = function(device) {
-    if (Object.keys(LogcatService.deviceEntries).includes(device.serial)) {
-      LogcatService.deviceEntries[device.serial].allowClean = true
-    }
-
-    $scope.LogcatService = LogcatService
-    $rootScope.LogcatService = LogcatService
 
     if (!device || !$scope.device) {
       alert('No device found')
@@ -142,6 +131,13 @@ module.exports = function DeviceControlCtrl($scope, DeviceService, GroupService,
     if ($rootScope.standalone) {
       $window.resizeTo($window.outerHeight, $window.outerWidth)
     }
+  }
+
+  $scope.quality = '60'
+  $scope.rate = $scope.quality
+  $scope.test = function() {
+    // $log.log('调整画质为：' + $scope.quality)
+    $scope.rate = $scope.quality
   }
 
 }

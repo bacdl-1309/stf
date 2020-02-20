@@ -48,6 +48,64 @@ module.exports = function ScalingServiceFactory() {
      * |--------------|------|---------|---------|---------|
      */
     return {
+      newcoords: function(boundingW, boundingH, screenW, screenH, relX, relY, rotation) {
+        var w, h, sw, sh, x, y, ratio, scaledValue
+
+        switch (rotation) {
+          case 0:
+            w = boundingW
+            h = boundingH
+            sw = screenW
+            sh = screenH
+            x = relX
+            y = relY
+            break
+          case 90:
+            w = boundingH
+            h = boundingW
+            sw = screenH
+            sh = screenW
+            x = boundingH - relY
+            y = relX
+            break
+          case 180:
+            w = boundingW
+            h = boundingH
+            sw = screenW
+            sh = screenH
+            x = boundingW - relX
+            y = boundingH - relY
+            break
+          case 270:
+            w = boundingH
+            h = boundingW
+            sw = screenH
+            sh = screenW
+            x = relY
+            y = boundingW - relX
+            break
+        }
+
+        var verticalMargin = (h - sh) / 2
+        var horizontalMargin = (w - sw) / 2
+
+        x -= horizontalMargin
+        if (x < 0) {
+          x = 0
+        } else if (x > sw) {
+          x = sw
+        }
+        y -= verticalMargin
+        if (y < 0) {
+          y = 0
+        } else if (y > sh) {
+          y = sh
+        }
+        return {
+          xP: x / sw
+          , yP: y / sh
+        }
+      },
       coords: function(boundingW, boundingH, relX, relY, rotation) {
         var w, h, x, y, ratio, scaledValue
 

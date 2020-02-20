@@ -1,8 +1,4 @@
-/**
-* Copyright © 2019 contains code contributed by Orange SA, authors: Denis Barbaron - Licensed under the Apache license 2.0
-**/
-
-module.exports = function SignInCtrl($scope, $http, CommonService) {
+module.exports = function SignInCtrl($scope, $http) {
 
   $scope.error = null
 
@@ -37,12 +33,4 @@ module.exports = function SignInCtrl($scope, $http, CommonService) {
         }
       })
   }
-
-  $scope.mailToSupport = function() {
-    CommonService.url('mailto:' + $scope.contactEmail)
-  }
-
-  $http.get('/auth/contact').then(function(response) {
-    $scope.contactEmail = response.data.contact.email
-  })
 }

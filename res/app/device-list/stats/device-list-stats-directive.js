@@ -1,7 +1,3 @@
-/**
-* Copyright © 2019 contains code contributed by Orange SA, authors: Denis Barbaron - Licensed under the Apache license 2.0
-**/
-
 module.exports = function DeviceListStatsDirective(
   UserService
 ) {
@@ -77,11 +73,8 @@ module.exports = function DeviceListStatsDirective(
         var newStats = updateStats(device)
 
         scope.counter.total -= 1
-        scope.counter.usable -= newStats.usable
-        scope.counter.busy -= newStats.busy
-        scope.counter.using -= newStats.using
-        //scope.counter.busy += newStats.busy - oldStats.busy
-        //scope.counter.using += newStats.using - oldStats.using
+        scope.counter.busy += newStats.busy - oldStats.busy
+        scope.counter.using += newStats.using - oldStats.using
 
         delete mapping[device.serial]
 

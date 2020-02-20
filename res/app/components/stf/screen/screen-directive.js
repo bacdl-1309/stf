@@ -9,6 +9,7 @@ module.exports = function DeviceScreenDirective(
 , PageVisibilityService
 , $timeout
 , $window
+, $log
 ) {
   return {
     restrict: 'E'
@@ -16,6 +17,7 @@ module.exports = function DeviceScreenDirective(
   , scope: {
       control: '&'
     , device: '&'
+    , quality: '='
     }
   , link: function(scope, element) {
       var URL = window.URL || window.webkitURL
@@ -25,6 +27,7 @@ module.exports = function DeviceScreenDirective(
 
       var device = scope.device()
       var control = scope.control()
+      var rate = scope.quality
 
       var input = element.find('input')
 
@@ -186,10 +189,17 @@ module.exports = function DeviceScreenDirective(
 
         function onScreenInterestGained() {
           if (ws.readyState === WebSocket.OPEN) {
+            ws.send(rate)
             ws.send('size ' + adjustedBoundSize.w + 'x' + adjustedBoundSize.h)
             ws.send('on')
           }
         }
+
+        scope.$watch('quality', function(newValue) {
+          // $log.log('In screen-directive: rate change to ' + newValue)
+          rate = newValue
+          onScreenInterestGained()
+        })
 
         function onScreenInterestAreaChanged() {
           if (ws.readyState === WebSocket.OPEN) {
@@ -518,6 +528,8 @@ module.exports = function DeviceScreenDirective(
         var fakePinch = false
         var lastPossiblyBuggyMouseUpEvent = 0
 
+        var canvas = element.find('canvas')[0]
+        var positioner = element.find('div')[0]
         function nextSeq() {
           return ++seq >= cycle ? (seq = 0) : seq
         }
@@ -594,14 +606,35 @@ module.exports = function DeviceScreenDirective(
           var x = e.pageX - screen.bounds.x
           var y = e.pageY - screen.bounds.y
           var pressure = 0.5
-          var scaled = scaler.coords(
-                screen.bounds.w
-              , screen.bounds.h
-              , x
-              , y
-              , screen.rotation
-              )
+          var phonescreenHeight = canvas.offsetHeight
+          var phonescreenWidth
+          if (screen.rotation === 0 || screen.rotation === 180) {
+            phonescreenWidth = phonescreenHeight * device.display.width / device.display.height
+          } else {
+            phonescreenWidth = phonescreenHeight * device.display.height / device.display.width
+          }
+          // var scaled = scaler.coords(
+          //       screen.bounds.w
+          //     , screen.bounds.h
+          //     , x
+          //     , y
+          //     , screen.rotation
+          //     )
 
+          var scaled = scaler.newcoords(
+            screen.bounds.w
+            , screen.bounds.h
+            , phonescreenWidth
+            , phonescreenHeight
+            , x
+            , y
+            , screen.rotation
+          )
+
+          // $log.info('pw:' + phonescreenWidth + ' ph:' + phonescreenHeight)
+          // $log.info('x:' + x + ' y:' + y + ' rotation: ' + screen.rotation)
+          // $log.info('width:' + screen.bounds.w + ' height:' + screen.bounds.h)
+          // $log.info('xp:' + scaled.xP + ' yp:' + scaled.yP)
           control.touchDown(nextSeq(), 0, scaled.xP, scaled.yP, pressure)
 
           if (fakePinch) {
@@ -633,6 +666,71 @@ module.exports = function DeviceScreenDirective(
           }
         }
 
+        function mouseMoveListenerNew(event) {
+          var e = event
+          if (e.originalEvent) {
+            e = e.originalEvent
+          }
+          if (e.which === 3) {
+            return
+          }
+          e.preventDefault()
+          var x = e.pageX - screen.bounds.x
+          var y = e.pageY - screen.bounds.y
+          var phonescreenHeight = canvas.offsetHeight
+          var phonescreenWidth
+          if (screen.rotation === 0 || screen.rotation === 180) {
+            phonescreenWidth = phonescreenHeight * device.display.width / device.display.height
+          } else {
+            phonescreenWidth = phonescreenHeight * device.display.height / device.display.width
+          }
+          var scaled = scaler.newcoords(
+            screen.bounds.w
+            , screen.bounds.h
+            , phonescreenWidth
+            , phonescreenHeight
+            , x
+            , y
+            , screen.rotation
+          )
+          switch (screen.rotation) {
+            case 0:
+              scope.nowx = parseInt(device.display.width * scaled.xP)
+              scope.nowy = parseInt(device.display.height * scaled.yP)
+              break
+            case 90:
+              scope.nowy = parseInt(device.display.width * (1 - scaled.xP))
+              scope.nowx = parseInt(device.display.height * scaled.yP)
+              break
+            case 180:
+              scope.nowx = parseInt(device.display.width * (1 - scaled.xP))
+              scope.nowy = parseInt(device.display.height * (1 - scaled.yP))
+              break
+            case 270:
+              scope.nowy = parseInt(device.display.width * scaled.xP)
+              scope.nowx = parseInt(device.display.height * (1 - scaled.yP))
+              break
+          }
+
+          if (device.platform === 'iOS') {
+            var ratio = 2
+            var name = device.name||device.model||device.marketName
+            if (name !== 'iPhone XR' &&
+              (name.startsWith('iPhone X') || name.endsWith('Plus'))) {
+              ratio = 3
+            }
+            scope.nowx /= ratio
+            scope.nowy /= ratio
+            scope.nowx = parseInt(scope.nowx)
+            scope.nowy = parseInt(scope.nowy)
+            // $log.info(device)
+            // $log.info(ratio + ' ' + scaled.xP + ' ' + scaled.yP)
+          }
+
+          scope.$apply()
+          // $log.info(scope.nowx + ' ' + scope.nowy)
+        }
+
         function mouseMoveListener(event) {
           var e = event
           if (e.originalEvent) {
@@ -653,14 +751,30 @@ module.exports = function DeviceScreenDirective(
           var x = e.pageX - screen.bounds.x
           var y = e.pageY - screen.bounds.y
           var pressure = 0.5
-          var scaled = scaler.coords(
+          var phonescreenHeight = canvas.offsetHeight
+          var phonescreenWidth
+          if (screen.rotation === 0 || screen.rotation === 180) {
+            phonescreenWidth = phonescreenHeight * device.display.width / device.display.height
+          } else {
+            phonescreenWidth = phonescreenHeight * device.display.height / device.display.width
+          }
+          var scaled = scaler.newcoords(
                 screen.bounds.w
               , screen.bounds.h
+              , phonescreenWidth
+              , phonescreenHeight
               , x
               , y
               , screen.rotation
               )
 
+          // var scaled = scaler.coords(
+          //   screen.bounds.w
+          //   , screen.bounds.h
+          //   , x
+          //   , y
+          //   , screen.rotation
+          // )
           control.touchMove(nextSeq(), 0, scaled.xP, scaled.yP, pressure)
 
           if (addGhostFinger) {
@@ -833,13 +947,29 @@ module.exports = function DeviceScreenDirective(
             var x = touch.pageX - screen.bounds.x
             var y = touch.pageY - screen.bounds.y
             var pressure = touch.force || 0.5
-            var scaled = scaler.coords(
-                  screen.bounds.w
-                , screen.bounds.h
-                , x
-                , y
-                , screen.rotation
-                )
+            var phonescreenHeight = canvas.offsetHeight
+            var phonescreenWidth = 1
+            if (screen.rotation === 0 || screen.rotation === 180) {
+              phonescreenWidth = phonescreenHeight * device.display.width / device.display.height
+            } else {
+              phonescreenWidth = phonescreenHeight * device.display.height / device.display.width
+            }
+            var scaled = scaler.newcoords(
+              screen.bounds.w
+              , screen.bounds.h
+              , phonescreenWidth
+              , phonescreenHeight
+              , x
+              , y
+              , screen.rotation
+            )
+            // var scaled = scaler.coords(
+            //       screen.bounds.w
+            //     , screen.bounds.h
+            //     , x
+            //     , y
+            //     , screen.rotation
+            //     )
 
             slotted[touch.identifier] = slot
             control.touchDown(nextSeq(), slot, scaled.xP, scaled.yP, pressure)
@@ -867,13 +997,29 @@ module.exports = function DeviceScreenDirective(
             var x = touch.pageX - screen.bounds.x
             var y = touch.pageY - screen.bounds.y
             var pressure = touch.force || 0.5
-            var scaled = scaler.coords(
-                  screen.bounds.w
-                , screen.bounds.h
-                , x
-                , y
-                , screen.rotation
-                )
+            var phonescreenHeight = canvas.offsetHeight
+            var phonescreenWidth
+            if (screen.rotation === 0 || screen.rotation === 180) {
+              phonescreenWidth = phonescreenHeight * device.display.width / device.display.height
+            } else {
+              phonescreenWidth = phonescreenHeight * device.display.height / device.display.width
+            }
+            var scaled = scaler.newcoords(
+              screen.bounds.w
+              , screen.bounds.h
+              , phonescreenWidth
+              , phonescreenHeight
+              , x
+              , y
+              , screen.rotation
+            )
+            // var scaled = scaler.coords(
+            //       screen.bounds.w
+            //     , screen.bounds.h
+            //     , x
+            //     , y
+            //     , screen.rotation
+            //     )
 
             control.touchMove(nextSeq(), slot, scaled.xP, scaled.yP, pressure)
             activateFinger(slot, x, y, pressure)
@@ -925,6 +1071,44 @@ module.exports = function DeviceScreenDirective(
           control.gestureStop(nextSeq())
         }
 
+        // function debounce(fn, context) {
+        //     let timeout = null
+        //     let lastPosition = {pageX: null, pageY: null}
+        //     clearTimeout(timeout)
+        //     timeout = setTimeout(function() {
+        //       // fn.apply(this, arguments)
+        //       fn(context)
+        //     }, 2000)
+        // }
+
+        // function getPosition(event) {
+        //     $log.info('悬停事件')
+        //     let canvas = element.find('canvas')[0]
+        //     let canvasBox = canvas.getBoundingClientRect()
+        //     let e = event
+        //     let scale_x = device.display.width / canvas.getBoundingClientRect().width
+        //     let scale_y = device.display.height / canvas.getBoundingClientRect().height
+        //     let devX = (e.clientX - canvasBox.left) * scale_x
+        //     let devY = (e.clientY - canvasBox.top) * scale_y
+        //     // let x = e.pageX - screen.bounds.x
+        //     // let y = e.pageY - screen.bounds.y
+        //     // let scaled = scaler.coords(
+        //     //   screen.bounds.w
+        //     //   , screen.bounds.h
+        //     //   , x
+        //     //   , y
+        //     //   , screen.rotation
+        //     // )
+        //     // let devX = Math.floor(scaled.xP * device.display.width)
+        //     // let devY = Math.floor(scaled.yP * device.display.height)
+        //     // control.touchDown(nextSeq(), 0, scaled.xP, scaled.yP, pressure)
+        //
+        //     $log.info('x: ' + devX)
+        //     $log.info('y: ' + devY)
+        // }
+
+        // element.on('mouseover', (event) => { debounce(getPosition, event) })
+        element.on('mousemove', mouseMoveListenerNew)
         element.on('touchstart', touchStartListener)
         element.on('mousedown', mouseDownListener)
         element.on('mouseup', mouseUpBugWorkaroundListener)

@@ -1,13 +1,6 @@
-/**
-* Copyright © 2019 contains code contributed by Orange SA, authors: Denis Barbaron - Licensed under the Apache license 2.0
-**/
-
 require('./signin.css')
 
-module.exports = angular.module('stf.signin', [
-  require('stf/util/common').name,
-  require('stf/common-ui').name
-])
+module.exports = angular.module('stf.signin', [])
   .config(function($routeProvider) {
     $routeProvider
       .when('/auth/mock/', {
